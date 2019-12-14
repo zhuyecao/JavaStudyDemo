@@ -1,10 +1,10 @@
 package com.zeroten.javales.flow;
 
 //import org.testng.Assert;
-import org.testng.annotations.Test;
+//import org.testng.annotations.Test;
 
 import org.junit.Assert;
-//import org.junit.Test;
+import org.junit.Test;
 
 public class AgeCheckTest {
     //        下面我们来做一个示例：给定一个年龄，然后判断该年龄属于儿童、青年、中年还是老年；
