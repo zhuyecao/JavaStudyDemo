@@ -231,6 +231,21 @@ public class StringTest {
     }
 
     @Test
+    public void testStringBuilder(){
+        StringBuilder str = new StringBuilder();
+        str.append("hello");
+        str.append(" world");
+        str.append("!");
+        System.out.println(str.toString());
+        System.out.println(str.length());
+        str.setLength(15);
+        System.out.print(str);
+        System.out.println("done");
+        str.setLength(7);
+        System.out.println(str);
+    }
+
+    @Test
     public void testStringCostTime(){
         long start = System.currentTimeMillis();
         String str = "";
@@ -246,6 +261,18 @@ public class StringTest {
     public void testStringBulider(){
         long start = System.currentTimeMillis();
         StringBuilder str = new StringBuilder();
+        for(int i = 0; i <= 50000; i++){
+            str.append(i);
+        }
+        System.out.println(str.length());
+        long end = System.currentTimeMillis();
+        System.out.println("耗时：" + (end - start) + "ms");
+    }
+
+    @Test
+    public void testStringBufferr(){
+        long start = System.currentTimeMillis();
+        StringBuffer str = new StringBuffer();
         for(int i = 0; i <= 50000; i++){
             str.append(i);
         }
