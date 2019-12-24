@@ -3,6 +3,7 @@ package com.zeroten.javales.array;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class ArrayTest {
 
@@ -99,5 +100,34 @@ public class ArrayTest {
 //      拷⻉数组 arr2 的后 3 位，放到 arr1 下标1之后的位置进行填充
         System.arraycopy(arr2, 2, arr1, 1, 3);  //arr1 = [1, 8, 9, 10, 5]
         System.out.println(Arrays.toString(arr1));
+    }
+
+    @Test
+    public void testFill(){
+//        ⽤⼯具类提供的⽅法 Arrays.fill 可以对数组全部或指定范围内的元素赋值为指定的值。
+//        定义⼀个⼤⼩为 10 的 int 数组，并将数组全部初始化为指定的值 5，打印数组；然后将数组后 4 位赋值
+//        为 3，再次打印数组
+        int[] arr = new int[10];
+        Arrays.fill(arr, 5);
+        System.out.println(Arrays.toString(arr));
+
+        Arrays.fill(arr, arr.length - 4, arr.length, 3);
+        System.out.println(Arrays.toString(arr));
+    }
+
+    @Test
+    public void testSort(){
+//        可以使⽤ Arrays.sort ⽅法对数组进⾏升序排序
+//        定义⼀个⼤⼩为 100 的 int 数组，
+//        随机给每⼀位赋值⼀个 0 ~ 100 之间的数值，
+//        然后对该数组进⾏排序
+//        并打印排序结果。
+        int[] arr = new int[100];
+        for(int index = 0; index < arr.length; index++){
+            arr[index] = new Random().nextInt(100);
+        }
+        System.out.println("排序前：" + Arrays.toString(arr));
+        Arrays.sort(arr);
+        System.out.println("排序后：" + Arrays.toString(arr));
     }
 }
